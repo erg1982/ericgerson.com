@@ -3,59 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Gerson | Creative Portfolio</title>
+    <title>Eric Gerson — Creative Director & Writer</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #fafafa; }
-        header { margin-bottom: 60px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-        h1 { margin: 0 0 10px 0; font-size: 2.5rem; letter-spacing: -0.5px; }
-        p.subtitle { font-size: 1.2rem; color: #666; margin: 0; }
-        .project { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); border: 1px solid #eee; }
-        .project h3 { margin-top: 0; font-size: 1.4rem; color: #111; }
-        .tag { display: inline-block; background: #eee; padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
-        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; background: #f9f9f9; padding: 15px; border-radius: 6px; font-size: 0.95rem; }
-        .meta-item strong { display: block; color: #555; font-size: 0.8rem; text-transform: uppercase; }
-        footer { margin-top: 60px; text-align: center; color: #888; font-size: 0.9rem; }
+        :root { --bg: #0d0d0f; --card: #16161a; --text: #f5f5f7; --muted: #94949e; --accent: #ff453a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; padding: 4vw; }
+        
+        /* Typography */
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
+        header { max-width: 1200px; margin: 0 auto 80px auto; }
+        .logo { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 10px; }
+        .subtitle { font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--muted); max-width: 600px; }
+        
+        /* Grid Layout */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        
+        /* Portfolio Cards */
+        .work-card { background: var(--card); border: 1px solid #24242b; border-radius: 12px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .work-card:hover { transform: translateY(-4px); border-color: #3a3a44; }
+        
+        /* Project Meta Tags */
+        .badge { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 20px; }
+        .work-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        
+        /* Strategy Brief Block */
+        .case-study-summary { background: #1c1c21; border-radius: 8px; padding: 20px; margin: 20px 0; font-size: 0.9rem; }
+        .case-study-summary div { margin-bottom: 12px; }
+        .case-study-summary div:last-child { margin-bottom: 0; }
+        .case-study-summary strong { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px; }
+        
+        /* Script / Copy Box Layout */
+        .script-box { background: #000; border-left: 3px solid var(--accent); padding: 15px; border-radius: 4px; font-family: "Courier New", Courier, monospace; font-size: 0.85rem; color: #e1e1e6; line-height: 1.4; margin: 15px 0; overflow-x: auto; }
+        .script-box p { margin-bottom: 8px; }
+        .script-box p:last-child { margin-bottom: 0; }
+        
+        /* Footer Links */
+        footer { max-width: 1200px; margin: 100px auto 40px auto; text-align: center; border-top: 1px solid #24242b; padding-top: 40px; color: var(--muted); font-size: 0.9rem; }
+        footer a { color: var(--text); text-decoration: none; font-weight: 500; margin: 0 10px; }
+        footer a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Eric Gerson</h1>
-        <p class="subtitle">Creative Direction • Copywriting • Product Presentations</p>
+        <h1 class="logo">Eric Gerson</h1>
+        <p class="subtitle">Creative Direction, Brand Strategy, & Copywriting for High-Impact Product Presentations.</p>
     </header>
 
-    <main>
-        <!-- Project 1 -->
-        <section class="project">
-            <span class="tag" style="background: #e3f2fd; color: #0d47a1;">Campaign</span>
-            <h3>Project Title: Next-Gen Product Launch</h3>
-            
-            <div class="meta-grid">
-                <div class="meta-item"><strong>The Brief</strong> 30-word summary of the business challenge and primary target audience.</div>
-                <div class="meta-item"><strong>The Insight</strong> The core human truth or data point that unlocked the creative strategy.</div>
-                <div class="meta-item"><strong>The Result</strong> Measurable outcome (e.g., 20% lift in CTR, sales goals exceeded).</div>
+    <main class="portfolio-grid">
+        
+        <!-- WORK ITEM 1: CREATIVE DIRECTION & CAMPAIGN CASE STUDY -->
+        <article class="work-card">
+            <div>
+                <span class="badge">Creative Direction</span>
+                <h3>Project Title: Next-Gen Product Launch</h3>
+                <p style="color: var(--muted); font-size: 0.95rem;">An integrated, multimedia campaign built to reshape the consumer narrative around automated software tools.</p>
+                
+                <div class="case-study-summary">
+                    <div>
+                        <strong>The Brief</strong>
+                        Position an advanced B2B automation platform as an intuitive, creative partner for enterprise teams rather than a complex technical overhead.
+                    </div>
+                    <div>
+                        <strong>The Insight</strong>
+                        Teams do not fear technology; they fear losing creative control. Showing the human interface behind automated outputs shifts hesitation to empowerment.
+                    </div>
+                    <div>
+                        <strong>The Result</strong>
+                        Achieved a 34% increase in demo registrations within Q1 and secured features across top industry trade publications.
+                    </div>
+                </div>
             </div>
-            
-            <p>Write a brief narrative about your creative direction here. Describe how you brought the presentation to life and managed the asset production.</p>
-        </section>
+        </article>
 
-        <!-- Project 2 -->
-        <section class="project">
-            <span class="tag" style="background: #f3e5f5; color: #4a148c;">Video Script</span>
-            <h3>Commercial Concept: "The Shift"</h3>
-            
-            <div class="meta-grid">
-                <div class="meta-item"><strong>Format</strong> 30-Second Broadcast TV / Digital Pre-Roll</div>
-                <div class="meta-item"><strong>Tone</strong> Confident, Cinematic, Inspiring</div>
+        <!-- WORK ITEM 2: COMMERCIAL SCRIPT SHOWCASE -->
+        <article class="work-card">
+            <div>
+                <span class="badge">Copywriting / Video Script</span>
+                <h3>Commercial Concept: "The Shift"</h3>
+                <p style="color: var(--muted); font-size: 0.95rem;">A high-tempo, 30-second digital pre-roll script designed to highlight real-time design adjustments.</p>
+                
+                <div class="script-box">
+                    <p><strong>[VISUAL]:</strong> Wide cinematic tracking shot following a creator navigating high-contrast UI screens in a dimly lit studio space.</p>
+                    <p><strong>[AUDIO]:</strong> Low, resonant electronic synth swell introduces a crisp, authoritative voiceover narration.</p>
+                    <p><strong>[VOICEOVER]:</strong> "The industry landscape doesn't pause for permission. It moves. And the creators who dictate that movement build what's next."</p>
+                    <p><strong>[VISUAL]:</strong> Sharp cut directly to a minimalist logo layout accompanied by an active on-screen CTA button.</p>
+                </div>
             </div>
-            
-            <p><strong>[VISUAL]:</strong> A montage of fast-paced cuts showing modern creators working in high-contrast lighting.</p>
-            <p><strong>[AUDIO/VO]:</strong> "The world doesn't wait for permission. It moves. And the ones who move it are the ones who build what's next."</p>
-        </section>
+        </article>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 Eric Gerson. All rights reserved. • Contact: eric@ericgerson.com</p>
+        <p>&copy; 2026 Eric Gerson. All rights reserved. &nbsp;&bull;&nbsp; <a href="mailto:eric@ericgerson.com">eric@ericgerson.com</a> &nbsp;&bull;&nbsp; <a href="https://linkedin.com">LinkedIn</a></p>
     </footer>
 
 </body>
