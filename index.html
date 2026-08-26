@@ -161,7 +161,7 @@
     margin-left: 4px; /* Optically centers the triangular play arrow inside the circle */
 }
         
-/* OPTION 3 REVISED: TIGHT UNIFIED FIT */ 
+/* OPTION 3 REVISED: CROSS-DEVICE PROGRAMMATIC CROP ENGINE */ 
 .visual-display-wrapper { 
     position: relative; 
     width: 100%; 
@@ -172,26 +172,54 @@
     z-index: 2; 
     display: flex; 
     flex-direction: column; 
-    gap: 4px; /* MINIMAL SPACE: Drops the gap from 15px to a tight 4px structural seam */
+    gap: 4px; /* Minimal seam spacing between tiers */
     width: 100%; 
 } 
 .frame-crop { 
     width: 100%; 
-    height: 155px;
+    height: 190px; /* Locked desktop boundary container window height */
     overflow: hidden; 
     border-radius: 6px; 
     border: 1px solid var(--border); 
     box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
     position: relative; 
-    background: #000; /* Dark baseline fill behind graphic masks */
+    background: #000; 
 } 
+
+/* RESPONSIVE SCALING IMAGE ENGINES */
 .cropped-img-target { 
     position: absolute; 
-    width: 100%; 
-    height: auto; 
     left: 50%; 
     transform: translateX(-50%); /* Clean horizontal centering tool */
+    width: 100%; 
+    height: auto; 
 } 
+
+/* PRECISION ALIGNMENT SHIFTS: Pins frames to extract targeted deck segments */
+.segment-top .cropped-img-target { 
+    top: 0; /* Snap directly to true top layout border line */
+}
+.segment-bottom .cropped-img-target { 
+    bottom: 0; /* Snap directly to true bottom layout border line */
+}
+
+/* MOBILE RESPONSIVE OVERRIDES (FORCING CROPPING ON SMALL MOBILE VIEWPORTS) */
+@media (max-width: 767px) {
+    .frame-crop {
+        height: 120px; /* FIXED: Reduces crop window depth on mobile screens so it fits content proportions cleanly */
+    }
+    .cropped-img-target {
+        width: 250% !important; /* FIXED: Prevents image from shrinking down entirely on narrow phone touchscreens. Forces it to remain wide and get cropped! */
+        max-width: none !important;
+    }
+    .segment-top .cropped-img-target { 
+        top: 0; /* Keeps top section anchored */
+    }
+    .segment-bottom .cropped-img-target { 
+        bottom: 0; /* Keeps bottom section anchored */
+    }
+}
+
 
         /* UNCOUPLED INDEPENDENT HEIGHT RULES */
 
