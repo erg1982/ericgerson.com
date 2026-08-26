@@ -211,6 +211,74 @@
     bottom: 0; /* Align perfectly to bottom boundary edge */
 }
 
+/* PROJECT 3: SIDE-BY-SIDE RESPONSIVE LAYOUT ENGINE */
+.web-portfolio-row-container {
+    display: flex;
+    flex-direction: column; /* Stacks image frames vertically on mobile viewports */
+    gap: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .web-portfolio-row-container {
+        flex-direction: row; /* Snaps frames horizontally side-by-side on desktop viewports */
+        justify-content: space-between;
+    }
+}
+
+.web-frame-card {
+    position: relative;
+    flex: 1; /* Grants equal horizontal space allocation to all three images */
+    width: 100%;
+    padding: 0px 14px 14px 0px; /* Reserves canvas perimeter margins for the offset shadow shadow drift */
+    display: flex;
+    flex-direction: column;
+}
+
+.web-image-canvas {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    z-index: 2; /* Forces image layer to float cleanly over backdrop offset card components */
+    background: #0f131a;
+}
+
+.web-screenshot-target {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Identical Presentation Offset Backdrop System matching Presentation Document Parameters */
+.deck-orange-shadow {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: calc(100% - 14px);
+    height: calc(100% - 14px);
+    background: #c25303; /* Matches programmatic orange deck backdrop layout */
+    border-radius: 8px;
+    z-index: 1;
+    transform: rotate(1.5deg); /* Applies subtle agency presentation tilt */
+}
+
+.web-frame-label {
+    position: relative;
+    z-index: 3;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-align: center;
+}
 
         /* Audio / Visual Script Blocks */ 
         .script-block { background: #0b0d13; border-radius: 8px; padding: 25px; font-family: "Courier New", Courier, monospace; font-size: 0.9rem; color: #e2e8f0; border: 1px dashed var(--border); } 
@@ -331,31 +399,60 @@
     </div>
 </article>
 
-            <!-- PROJECT 3 -->
-            <article class="project-card">
-                <div>
-                    <span class="project-tag">Project Three &bull; UX & Web Transformation</span>
-                    <h3>Reimagining .Com for the Modern Gardener</h3>
-                    <p class="project-desc">Transforming BioAdvanced.com from a standard transactional catalog layout into an educational, solution-first 
-                        digital consumer hub.</p>
-                </div>
-  <div class="framework-box">
-                    <div class="fw-node">
-                        <strong>The Challenge</strong>
-                       The original site struggled to balance product discovery with education. Users were overwhelmed by dense content and unclear 
-                        navigation, making it harder to find what they needed.
-                    </div>
-                    <div class="fw-node">
-                        <strong>The Insight</strong>
-                        By aligning UX research, SEO insights, and content strategy, we uncovered a key opportunity: users weren’t just browsing, 
-                        they were looking for solutions. They needed a site that could guide them quickly from question to product to purchase.
-                    </div>
-                    <div class="fw-node">
-                        <strong>The Execution</strong>
-                        We redesigned the site to simplify product discovery, integrate helpful content, and support retail conversion via PriceSpider. 
-                        The result is a platform that balances brand storytelling with practical lawn and garden solutions, positioning BioAdvanced as 
-                        both a trusted authority and a sales driver.
-                    </div>
-  </div>
-            </article>
+<!-- PROJECT 3: DIGITAL WEB TRANSFORMATION MAIN CARD --> 
+<article class="project-card full-width-stack-card"> 
+    <div class="card-text-content full-width-text-layout"> 
+        <span class="project-tag">Project Three &bull; UX & Web Transformation</span> 
+        <h3>Reimagining Dot Com for the Modern Gardener</h3> 
+        <p class="project-desc">Transforming BioAdvanced.com from a standard transactional catalog layout into an educational, solution-first digital consumer hub.</p> 
+        
+        <div class="framework-grid horizontal-row-layout"> 
+            <div class="fw-node"> 
+                <strong>The Challenge</strong> 
+                The original site struggled to balance product discovery with education. Users were overwhelmed by dense content and unclear navigation, making it harder to find what they needed.
+            </div> 
+            <div class="fw-node"> 
+                <strong>The Insight</strong> 
+                By aligning UX research, SEO insights, and content strategy, we uncovered a key opportunity: users weren’t just browsing, they were looking for solutions. They needed a site that could guide them quickly from question to product to purchase.
+            </div> 
+            <div class="fw-node"> 
+                <strong>The Execution</strong> 
+                We redesigned the site to simplify product discovery, integrate helpful content, and support retail conversion via PriceSpider. The result is a platform that balances brand storytelling with practical lawn and garden solutions, positioning BioAdvanced as both a trusted authority and a sales driver.
+            </div> 
+        </div> 
+    </div>
+
+    <!-- RESPONSIVE HORIZONTAL CAPTURE ENGINE FOR USER PORTFOLIO WEB IMAGES -->
+    <div class="web-portfolio-row-container">
+        
+        <!-- Web Image Frame 1: BioAdvanced -->
+        <div class="web-frame-card">
+            <div class="deck-orange-shadow"></div>
+            <div class="web-image-canvas">
+                <img src="./Project_03_01.webp" alt="BioAdvanced Digital Hub Redesign" class="web-screenshot-target">
+            </div>
+            <div class="web-frame-label">BioAdvanced Hub</div>
+        </div>
+
+        <!-- Web Image Frame 2: Natria -->
+        <div class="web-frame-card">
+            <div class="deck-orange-shadow"></div>
+            <div class="web-image-canvas">
+                <img src="./Project_03_02.webp" alt="Natria Solution Wireframe Integration" class="web-screenshot-target">
+            </div>
+            <div class="web-frame-label">Natria Portal</div>
+        </div>
+
+        <!-- Web Image Frame 3: Baby Bio -->
+        <div class="web-frame-card">
+            <div class="deck-orange-shadow"></div>
+            <div class="web-image-canvas">
+                <img src="./Project_03_03.webp" alt="Baby Bio Product Showcase UI" class="web-screenshot-target">
+            </div>
+            <div class="web-frame-label">Baby Bio UI</div>
+        </div>
+
+    </div>
+</article>
+
             
