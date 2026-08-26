@@ -1,0 +1,200 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Eric Gerson — Professional Resume</title> 
+    <style> 
+        :root { 
+            --bg: #111622; 
+            --card: #1a202c; 
+            --text: #f7fafc; 
+            --muted: #a0aec0; 
+            --accent: #ff6b00; 
+            --border: #2d3748; 
+        } 
+        * { box-sizing: border-box; margin: 0; padding: 0; } 
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6; 
+            padding: 5vw; 
+        } 
+        
+        /* Layout Wrappers */ 
+        nav, header, main, footer { max-width: 900px; margin: 0 auto; } 
+
+        /* UNIVERSAL TOP NAVIGATION BAR */
+        .global-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+        .nav-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text);
+            letter-spacing: -0.03em;
+        }
+        .nav-logo span { color: var(--accent); }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-item-link {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--muted);
+            transition: color 0.2s ease;
+        }
+        .nav-item-link:hover, .nav-item-link.active {
+            color: var(--accent);
+        }
+        
+        /* Header Profile */ 
+        header { margin-bottom: 50px; border-bottom: 1px solid var(--border); padding-bottom: 30px; } 
+        .name { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 10px; } 
+        .name span { color: var(--accent); } 
+        .title-sub { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--muted); font-weight: 600; margin-bottom: 15px; } 
+        
+        /* Contact Quick Metadata Info Bar */
+        .resume-meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-top: 15px;
+        }
+        .meta-anchor {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .meta-anchor:hover { color: var(--accent); }
+
+        /* Resume Grid Sections */ 
+        .resume-headline { font-size: 1.6rem; font-weight: 700; margin: 40px 0 20px 0; border-left: 4px solid var(--accent); padding-left: 15px; letter-spacing: -0.02em; } 
+        .resume-block { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; margin-bottom: 25px; }
+        
+        /* Experience Component Heading Grid Layout */
+        .exp-header { display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        @media (min-width: 600px) { .exp-header { flex-direction: row; align-items: baseline; } }
+        
+        .job-title { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+        .job-title span { color: var(--accent); font-weight: 500; font-size: 1.1rem; }
+        .job-date { font-size: 0.9rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+        
+        /* Bullet point configurations */
+        .resume-bullets { list-style-position: outside; margin-left: 20px; color: var(--muted); font-size: 0.98rem; }
+        .resume-bullets li { margin-bottom: 10px; }
+        .resume-bullets li strong { color: var(--text); }
+
+        /* Skills Pill Engine */
+        .skills-grid-wrapper { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .skill-pill { background: #0f131a; border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; transition: border-color 0.2s; }
+        .skill-pill:hover { border-color: var(--accent); }
+
+        footer { margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center; } 
+        .copyright { color: var(--muted); font-size: 0.85rem; } 
+    </style> 
+</head> 
+<body> 
+
+    <!-- TOP RIGHT NAVIGATION LAYER -->
+    <nav class="global-nav">
+        <a href="./" class="nav-logo">Eric <span>Gerson</span></a>
+        <ul class="nav-links">
+            <li><a href="./" class="nav-item-link">Home</a></li>
+            <li><a href="./resume.html" class="nav-item-link active">Resume</a></li>
+        </ul>
+    </nav>
+
+    <header> 
+        <h1 class="name">Eric <span>Gerson</span></h1> 
+        <p class="title-sub">Content Strategist & Creative Operations Leader</p> 
+        
+        <div class="resume-meta-bar">
+            <div>📍 Durham, NC</div>
+            <div>| 💬 <a href="sms:+19195209764" class="meta-anchor">919-520-9764</a></div>
+            <div>| ✉️ <a href="mailto:erg1982@gmail.com" class="meta-anchor">erg1982@gmail.com</a></div>
+            <div>| 💼 <a href="https://linkedin.com" target="_blank" rel="noopener" class="meta-anchor">LinkedIn Profile</a></div>
+        </div>
+    </header> 
+
+    <main> 
+        
+        <!-- ======================================================== -->
+        <!-- SECTION A: PROFESSIONAL SUMMARY                          -->
+        <!-- ======================================================== -->
+        <h2 class="resume-headline">Professional Summary</h2>
+        <div class="resume-block">
+            <p style="color: var(--muted); font-size: 1.05rem;">
+                <!-- [EDIT COPY HERE]: Swap this paragraph block out with your custom executive summary -->
+                15+ years of experience leading digital content ecosystems, consumer affairs parameters, and complex creative operation timelines. Expert at transforming extensive product experience networks (PXM) and regulatory compliance hurdles into high-converting multimedia frameworks.
+            </p>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- SECTION B: PROFESSIONAL WORK HISTORY                     -->
+        <!-- ======================================================== -->
+        <h2 class="resume-headline">Professional Experience</h2>
+        
+        <!-- JOB SLOT ONE -->
+        <div class="resume-block">
+            <div class="exp-header">
+                <!-- [EDIT COPY HERE]: Change job titles and company parameters below -->
+                <div class="job-title">Content Strategist & PXM Lead <span>@ SBM Life Science</span></div>
+                <div class="job-date">2019 — Present</div>
+            </div>
+            <ul class="resume-bullets">
+                <!-- [EDIT COPY HERE]: Edit or add list items using standard HTML bullet tags -->
+                <li><strong>Operational Value:</strong> Managed Salsify PXM infrastructure across 200+ consumer items, reducing claims payouts by 60%.</li>
+                <li><strong>Budget Execution:</strong> Generated a reduction of $200K+ in annualized creative design production overhead costs.</li>
+                <li><strong>AI Automation:</strong> Integrated advanced AI-enabled creative tools to compress asset creation design costs by another 30%.</li>
+                <li><strong>Creative Leadership:</strong> Directed multi-tier internal design studios and art-directed specialized external agency teams.</li>
+            </ul>
+        </div>
+
+        <!-- JOB SLOT TWO (PRE-BUILT TEMPLATE BLOCK) -->
+        <div class="resume-block">
+            <div class="exp-header">
+                <!-- [EDIT COPY HERE]: Use this structure to add additional historic roles -->
+                <div class="job-title">Your Previous Job Title <span>@ Company Name</span></div>
+                <div class="job-date">Dates Employed</div>
+            </div>
+            <ul class="resume-bullets">
+                <li><strong>Action Bullet Point One:</strong> Focus on linking your operational tasks directly with clear metric performance outcomes.</li>
+                <li><strong>Action Bullet Point Two:</strong> Detail the explicit team scopes, internal software, or budget lines you managed.</li>
+            </ul>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- SECTION C: TECHNICAL COMPETENCY PILLS                     -->
+        <!-- ======================================================== -->
+        <h2 class="resume-headline">Core Skillsets</h2>
+        <div class="resume-block">
+            <div class="skills-grid-wrapper">
+                <!-- [EDIT COPY HERE]: Delete, alter, or add new text pills to this wrapping layout block -->
+                <div class="skill-pill">Content Strategy</div>
+                <div class="skill-pill">Creative Operations</div>
+                <div class="skill-pill">Salsify PXM</div>
+                <div class="skill-pill">Art Direction</div>
+                <div class="skill-pill">AI Workflow Automation</div>
+                <div class="skill-pill">UX & UI Optimization</div>
+                <div class="skill-pill">Copywriting & Scripting</div>
+                <div class="skill-pill">Cross-Functional Leadership</div>
+            </div>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- SECTION D: ACADEMIC CREDENTIALS                          -->
+        <!-- ======================================================== -->
+        <h2 class="resume-headline">Education & Academic Background</h2>
