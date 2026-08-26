@@ -308,6 +308,37 @@
     text-align: center;
 }
 
+        /* PROJECT 3: INTERACTIVE HOVER GLOW & INTERACTION ENGINE */
+.web-hover-trigger-anchor {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Base Transition Smoothing for Elements inside the card link loop */
+.web-image-canvas {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deck-orange-shadow {
+    transition: transform 0.3s ease;
+}
+
+/* Hover Interaction: Shifts canvas up slightly and radiates an orange glow filter */
+.web-hover-trigger-anchor:hover .web-image-canvas {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(255, 107, 0, 0.25); /* Signature orange brand glow effect */
+}
+
+/* Hover Interaction: Drifts presentation card background downward slightly to emphasize depth */
+.web-hover-trigger-anchor:hover .deck-orange-shadow {
+    transform: rotate(3deg) scale(1.03);
+}
+
+
         /* Audio / Visual Script Blocks */ 
         .script-block { background: #0b0d13; border-radius: 8px; padding: 25px; font-family: "Courier New", Courier, monospace; font-size: 0.9rem; color: #e2e8f0; border: 1px dashed var(--border); } 
         .script-line { margin-bottom: 12px; } 
