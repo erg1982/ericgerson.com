@@ -96,6 +96,16 @@
     transform: translateX(-50%); /* Clean horizontal centering tool */
 } 
 
+        /* UNCOUPLED INDEPENDENT HEIGHT RULES */
+
+.segment-top {
+    height: 150px !important; /* FIXED: Change only this value to alter the top frame height */
+}
+
+.segment-bottom {
+    height: 155px; /* Stays locked exactly at its original frame height */
+}
+        
 /* PRECISION ALIGNMENT SHIFTS: Pins positions cleanly to show full contents */
 .segment-top .cropped-img-target { 
     top: 0; /* Align perfectly to top boundary edge */
