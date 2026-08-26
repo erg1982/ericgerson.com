@@ -73,6 +73,44 @@
         .contact-link { color: var(--text); text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.2s; }
         .contact-link:hover { color: var(--accent); }
         .copyright { color: var(--muted); font-size: 0.85rem; }
+
+        /* OPTION 3: PROGRAMMATIC CROP ENGINE */
+.split-frame-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+.frame-crop {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+}
+.cropped-img-target {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Automatically centers the focus of the layout graphic */
+}
+/* Focus adjustments targeting the specific image layout parameters */
+.segment-top .cropped-img-target { object-position: top; }
+.segment-bottom .cropped-img-target { object-position: bottom; }
+.split-backdrop {
+    top: 20px !important;
+    left: 20px !important;
+    width: calc(100% - 20px) !important;
+    height: calc(100% - 20px) !important;
+    transform: rotate(-1deg) !important;
+}
+
     </style>
 </head>
 <body>
@@ -124,30 +162,33 @@
         <h2 class="grid-headline">Selected Creative Case Studies</h2>
         <div class="portfolio-grid">
 
-            <!-- PROJECT 1 -->
-            <article class="project-card">
-                <div>
-                    <span class="project-tag">Project One &bull; PDP Visual Strategy</span>
-                    <h3>Evolving Visual Layouts for Product Understanding</h3>
-                    <p class="project-desc">Transitioning square 1000x1000 PDP imagery from standard transactional info-displays into high-impact, 
-                        confidence-building conversion drivers.</p>
-                </div>
-                <div class="framework-box">
-                    <div class="fw-node">
-                        <strong>The Challenge</strong>
-                        Square PDP formats limit canvas space. Over-cluttering layouts with disjointed technical elements compromises message comprehension.
-                    </div>
-                    <div class="fw-node">
-                        <strong>The Insight</strong>
-                        Data revealed 60% of customer interactions stem from structural confusion, and 80% focus strictly on product application rules.
-                    </div>
-                    <div class="fw-node">
-                        <strong>The Execution</strong>
-                        Pivoted messaging to bold layout signifiers like "NO MIXING REQUIRED." Transformed educational clarity into active operational 
-                        confidence, scaling organic traffic metrics by 42%.
-                    </div>
-                </div>
-            </article>
+          <!-- PROJECT 1 STACKED VARIATION -->
+<article class="project-card full-width-stack-card">
+    <div class="card-text-content full-width-text-layout">
+        <span class="project-tag">Project One &bull; PDP Strategy</span>
+        <h3>Evolving Visual Layouts for Product Understanding</h3>
+        <p class="project-desc">Transitioning 1000x1000 square PDP graphics away from chaotic information clusters into structured, confidence-building conversion displays.</p>
+        
+        <div class="framework-grid horizontal-row-layout">
+            <div class="fw-node"><strong>Problem</strong><p>Square layouts easily get messy, confusing shoppers and drowning out core benefits.</p></div>
+            <div class="fw-node"><strong>Insight</strong><p>60% of support volume came from usage issues. Answering instructions visually deflects support tickets.</p></div>
+            <div class="fw-node"><strong>Execution</strong><p>Shifted copy to bold declarations like "NO MIXING REQUIRED." Grew organic discovery by 42%.</p></div>
+        </div>
+    </div>
+
+  <!-- Visual Component Layer: Option Three Split -->
+<div class="visual-display-wrapper split-grid-type">
+    <div class="orange-backdrop split-backdrop"></div>
+    <div class="split-frame-wrapper">
+        <div class="frame-crop segment-top">
+            <img src="project1-evolution.png" alt="2019 Paradigm Cutout" class="cropped-img-target">
+        </div>
+        <div class="frame-crop segment-bottom">
+            <img src="project1-evolution.png" alt="2026 Paradigm Cutout" class="cropped-img-target">
+        </div>
+    </div>
+</div>
+</article>
 
             <!-- PROJECT 2 -->
             <article class="project-card">
