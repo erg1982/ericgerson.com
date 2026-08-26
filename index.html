@@ -539,11 +539,47 @@
         .contact-link { color: var(--text); text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.2s; } 
         .contact-link:hover { color: var(--accent); } 
         .copyright { color: var(--muted); font-size: 0.85rem; } 
+
+                /* UNIVERSAL TOP NAVIGATION BAR STYLES */
+        .global-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+        .nav-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text);
+            letter-spacing: -0.03em;
+        }
+        .nav-logo span { color: var(--accent); }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none; /* REMOVES THE BULLET POINTS */
+            padding: 0;
+            margin: 0;
+        }
+        .nav-item-link {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--muted);
+            transition: color 0.2s ease;
+        }
+        .nav-item-link:hover, .nav-item-link.active {
+            color: var(--accent);
+        }
+
     </style> 
 </head> 
 
 <body> 
-    ```html
+    
         <!-- UNIVERSAL NAVIGATION BAR -->
     <nav class="global-nav">
         <ul class="nav-links">
