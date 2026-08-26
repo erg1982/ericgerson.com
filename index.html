@@ -64,13 +64,46 @@
         .fw-node strong { display: block; color: var(--text); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; } 
         .fw-node p { color: var(--muted); font-size: 0.95rem; } 
         
-        /* OPTION 3: PROGRAMMATIC CROP ENGINE */ 
-        .visual-display-wrapper { position: relative; width: 100%; margin-top: 15px; }
-        .split-frame-wrapper { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 15px; width: 100%; } 
-        .frame-crop { width: 100%; height: 160px; overflow: hidden; border-radius: 6px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.2); position: relative; } 
-        .cropped-img-target { position: absolute; width: 100%; height: auto; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; } 
-        .segment-top .cropped-img-target { transform: translate(-50%, -15%); }
-        .segment-bottom .cropped-img-target { transform: translate(-50%, -75%); }
+/* OPTION 3 REVISED: TIGHT UNIFIED FIT */ 
+.visual-display-wrapper { 
+    position: relative; 
+    width: 100%; 
+    margin-top: 15px; 
+}
+.split-frame-wrapper { 
+    position: relative; 
+    z-index: 2; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 4px; /* MINIMAL SPACE: Drops the gap from 15px to a tight 4px structural seam */
+    width: 100%; 
+} 
+.frame-crop { 
+    width: 100%; 
+    height: 190px; /* FIXED: Increased height from 160px to 190px to prevent the 2019 row from cutting off */
+    overflow: hidden; 
+    border-radius: 6px; 
+    border: 1px solid var(--border); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    position: relative; 
+    background: #000; /* Dark baseline fill behind graphic masks */
+} 
+.cropped-img-target { 
+    position: absolute; 
+    width: 100%; 
+    height: auto; 
+    left: 50%; 
+    transform: translateX(-50%); /* Clean horizontal centering tool */
+} 
+
+/* PRECISION ALIGNMENT SHIFTS: Pins positions cleanly to show full contents */
+.segment-top .cropped-img-target { 
+    top: 0; /* Align perfectly to top boundary edge */
+}
+.segment-bottom .cropped-img-target { 
+    bottom: 0; /* Align perfectly to bottom boundary edge */
+}
+
 
         /* Audio / Visual Script Blocks */ 
         .script-block { background: #0b0d13; border-radius: 8px; padding: 25px; font-family: "Courier New", Courier, monospace; font-size: 0.9rem; color: #e2e8f0; border: 1px dashed var(--border); } 
