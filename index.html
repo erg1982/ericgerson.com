@@ -161,7 +161,7 @@
     margin-left: 4px; /* Optically centers the triangular play arrow inside the circle */
 }
         
-/* OPTION 3 REVISED: CROSS-DEVICE PROGRAMMATIC CROP ENGINE */ 
+/* OPTION 3 REVISED: ADAPTIVE DESKTOP-CROP / MOBILE-FULL LAYOUT ENGINE */ 
 .visual-display-wrapper { 
     position: relative; 
     width: 100%; 
@@ -172,12 +172,14 @@
     z-index: 2; 
     display: flex; 
     flex-direction: column; 
-    gap: 4px; /* Minimal seam spacing between tiers */
+    gap: 4px; 
     width: 100%; 
 } 
+
+/* STANDARD DESKTOP STRUCTURAL RULES (Default Viewports) */
 .frame-crop { 
     width: 100%; 
-    height: 190px; /* Locked desktop boundary container window height */
+    height: 190px; /* Crops image height window on desktop interfaces */
     overflow: hidden; 
     border-radius: 6px; 
     border: 1px solid var(--border); 
@@ -185,40 +187,47 @@
     position: relative; 
     background: #000; 
 } 
-
-/* RESPONSIVE SCALING IMAGE ENGINES */
 .cropped-img-target { 
     position: absolute; 
     left: 50%; 
-    transform: translateX(-50%); /* Clean horizontal centering tool */
+    transform: translateX(-50%); 
     width: 100%; 
     height: auto; 
 } 
+.segment-top .cropped-img-target { top: 0; }
+.segment-bottom .cropped-img-target { bottom: 0; }
 
-/* PRECISION ALIGNMENT SHIFTS: Pins frames to extract targeted deck segments */
-.segment-top .cropped-img-target { 
-    top: 0; /* Snap directly to true top layout border line */
-}
-.segment-bottom .cropped-img-target { 
-    bottom: 0; /* Snap directly to true bottom layout border line */
-}
 
-/* MOBILE RESPONSIVE OVERRIDES (FORCING CROPPING ON SMALL MOBILE VIEWPORTS) */
+/* MOBILE RESPONSIVE ENGINE (TRIGGERS FOR SCREENS SMALLER THAN 768px) */
 @media (max-width: 767px) {
-    .frame-crop {
-        height: 120px; /* FIXED: Reduces crop window depth on mobile screens so it fits content proportions cleanly */
+    /* 1. COMPLETELY HIDE THE DUPLICATE BOTTOM SECTION */
+    .segment-bottom {
+        display: none !important;
     }
-    .cropped-img-target {
-        width: 250% !important; /* FIXED: Prevents image from shrinking down entirely on narrow phone touchscreens. Forces it to remain wide and get cropped! */
-        max-width: none !important;
+    
+    /* 2. REMOVE THE DESKTOP HEIGHT LIMITS ON THE TOP ROW */
+    .segment-top {
+        height: auto !important; /* Forces the box to expand to fit the full graphic height */
+        overflow: visible !important; /* Removes the crop boundary mask */
+        background: transparent !important;
+        border: none !important; /* Removes duplicate outer borders */
+        box-shadow: none !important;
     }
-    .segment-top .cropped-img-target { 
-        top: 0; /* Keeps top section anchored */
-    }
-    .segment-bottom .cropped-img-target { 
-        bottom: 0; /* Keeps bottom section anchored */
+    
+    /* 3. RE-CENTER AND SCALE THE MAIN GRAPHIC UNTOUCHED */
+    .project1-core-image {
+        position: relative !important; /* Overrides absolute positioning */
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important; /* Scales naturally from edge to edge */
+        height: auto !important;
+        border-radius: 6px;
+        border: 1px solid var(--border); /* Re-applies clean card borders to graphic edges */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        display: block;
     }
 }
+
 
 
         /* UNCOUPLED INDEPENDENT HEIGHT RULES */
@@ -408,17 +417,18 @@
                     </div> 
                 </div>
                 
-                <!-- Visual Component Layer FIXED WITH DUAL FRAMES --> 
-                <div class="visual-display-wrapper split-grid-type"> 
-                    <div class="split-frame-wrapper"> 
-                        <div class="frame-crop segment-top"> 
-                            <img src="./Project_01_01.webp" alt="2019 Paradigm Evolution State" class="cropped-img-target"> 
-                        </div> 
-                        <div class="frame-crop segment-bottom"> 
-                            <img src="./Project_01_01.webp" alt="2026 Paradigm Evolution State" class="cropped-img-target"> 
-                        </div> 
-                    </div> 
-                </div> 
+<!-- Visual Component Layer: Clean Root Fit --> 
+<div class="visual-display-wrapper split-grid-type"> 
+    <div class="split-frame-wrapper"> 
+        <div class="frame-crop segment-top"> 
+            <!-- Added the explicit 'project1-core-image' tracking class -->
+            <img src="./Project_01_01.webp" alt="Visual Evolution Matrix" class="cropped-img-target project1-core-image"> 
+        </div> 
+        <div class="frame-crop segment-bottom"> 
+            <img src="./Project_01_01.webp" alt="Visual Evolution Matrix" class="cropped-img-target"> 
+        </div> 
+    </div> 
+</div>
             </article> 
 
 <!-- PROJECT 2 REMODEL: INTERACTIVE SIDE-BY-SIDE VIDEO COLUMN --> 
