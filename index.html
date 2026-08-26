@@ -412,7 +412,7 @@
     transform: rotate(3deg) scale(1.03);
 }
 
-/* PROJECTS 4 & 5: ADVANCED MEDIA GRID INTERFACES */
+/* PROJECTS 4 & 5: CROSS-DEVICE STRUCTURAL RE-ALIGNMENT ENGINE */
 @media (min-width: 850px) {
     .reverse-split-layout {
         direction: rtl; /* Sweeps Project 5 image to the left side on desktop for visual balance */
@@ -424,12 +424,12 @@
     }
 }
 
-/* Project 4: Long Vertical Asset Mask Scroll Window */
+/* Project 4: Unified Scroll Window Container */
 .social-scroll-mask-frame {
     position: relative;
     width: 100%;
-    height: 420px; /* Locks the visible canvas window height */
-    overflow-y: scroll; /* Activates pure vertical scroll inside container */
+    height: 420px; /* Visible window canvas height */
+    overflow-y: scroll;
     overflow-x: hidden;
     border-radius: 6px;
     z-index: 2;
@@ -466,13 +466,6 @@
     color: var(--text);
 }
 
-/* Offset Backdrop Adjustments */
-.social-backdrop-adjustment {
-    top: 20px !important; left: 20px !important;
-    width: calc(100% - 20px) !important; height: calc(100% - 20px) !important;
-    background: #c25303 !important; transform: rotate(-1.5deg); z-index: 1;
-}
-
 /* Project 5: Creative Canvas Container Layout */
 .launch-image-canvas {
     position: relative;
@@ -480,6 +473,8 @@
     width: 100%;
     border-radius: 6px;
     overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -488,23 +483,48 @@
     height: auto !important;
     max-height: none !important;
     display: block;
+    box-shadow: none !important;
+    border: none !important;
 }
 
-.launch-backdrop-adjustment {
-    top: 20px !important; left: 20px !important;
-    width: calc(100% - 20px) !important; height: calc(100% - 20px) !important;
-    background: #c25303 !important; transform: rotate(1.5deg); z-index: 1;
+/* UNIFIED BACKDROP DRIFT SPECS FOR BOTH PROJECT 4 & 5 */
+.social-backdrop-adjustment, .launch-backdrop-adjustment {
+    position: absolute;
+    top: 15px !important; 
+    left: 15px !important;
+    width: calc(100% - 15px) !important; 
+    height: calc(100% - 15px) !important;
+    background: #c25303 !important; 
+    z-index: 1;
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
+.social-backdrop-adjustment { transform: rotate(-1.5deg); }
+.launch-backdrop-adjustment { transform: rotate(1.5deg); }
 
 /* Interactive Hover Actions for Project 5 Brand Module */
 .project-card:hover .launch-image-canvas {
     transform: translateY(-4px);
     border-color: var(--accent);
-    box-shadow: 0 15px 30px rgba(255, 107, 0, 0.2);
+    box-shadow: 0 15px 30px rgba(255, 107, 0, 0.25);
 }
 .project-card:hover .launch-backdrop-adjustment {
     transform: rotate(2.5deg) scale(1.02);
+}
+
+/* 📱 MOBILE RESPONSIVE OVERRIDES: PULLING WRAPPERS INTO ALIGNMENT MESH */
+@media (max-width: 849px) {
+    .media-right-alignment {
+        padding: 0 15px 15px 0 !important; /* FIXED: Reserves critical canvas gutters for backdrop drift alignment on touch screens */
+        box-sizing: border-box;
+        width: 100%;
+        display: block !important;
+        margin-top: 20px;
+    }
+    
+    .social-scroll-mask-frame {
+        height: 340px; /* FIXED: Compresses frame height slightly on mobile to maintain clean UI scaling */
+    }
 }
 
         /* Audio / Visual Script Blocks */ 
