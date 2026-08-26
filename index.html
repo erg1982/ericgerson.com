@@ -295,8 +295,6 @@
     }
 }
 
-
-
         /* UNCOUPLED INDEPENDENT HEIGHT RULES */
 
 .segment-top {
@@ -414,6 +412,100 @@
     transform: rotate(3deg) scale(1.03);
 }
 
+/* PROJECTS 4 & 5: ADVANCED MEDIA GRID INTERFACES */
+@media (min-width: 850px) {
+    .reverse-split-layout {
+        direction: rtl; /* Sweeps Project 5 image to the left side on desktop for visual balance */
+    }
+    .reverse-split-layout .card-text-content,
+    .reverse-split-layout .framework-grid,
+    .reverse-split-layout .script-box {
+        direction: ltr; /* Restores standard text reading direction */
+    }
+}
+
+/* Project 4: Long Vertical Asset Mask Scroll Window */
+.social-scroll-mask-frame {
+    position: relative;
+    width: 100%;
+    height: 420px; /* Locks the visible canvas window height */
+    overflow-y: scroll; /* Activates pure vertical scroll inside container */
+    overflow-x: hidden;
+    border-radius: 6px;
+    z-index: 2;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--card);
+}
+
+.long-scroll-image-target {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    display: block;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.scroll-indicator-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(17, 22, 34, 0.85);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 20px;
+    z-index: 3;
+    pointer-events: none;
+    color: var(--text);
+}
+
+/* Offset Backdrop Adjustments */
+.social-backdrop-adjustment {
+    top: 20px !important; left: 20px !important;
+    width: calc(100% - 20px) !important; height: calc(100% - 20px) !important;
+    background: #c25303 !important; transform: rotate(-1.5deg); z-index: 1;
+}
+
+/* Project 5: Creative Canvas Container Layout */
+.launch-image-canvas {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.launch-static-image-target {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    display: block;
+}
+
+.launch-backdrop-adjustment {
+    top: 20px !important; left: 20px !important;
+    width: calc(100% - 20px) !important; height: calc(100% - 20px) !important;
+    background: #c25303 !important; transform: rotate(1.5deg); z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Interactive Hover Actions for Project 5 Brand Module */
+.project-card:hover .launch-image-canvas {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(255, 107, 0, 0.2);
+}
+.project-card:hover .launch-backdrop-adjustment {
+    transform: rotate(2.5deg) scale(1.02);
+}
 
         /* Audio / Visual Script Blocks */ 
         .script-block { background: #0b0d13; border-radius: 8px; padding: 25px; font-family: "Courier New", Courier, monospace; font-size: 0.9rem; color: #e2e8f0; border: 1px dashed var(--border); } 
@@ -599,6 +691,75 @@
 
     </div>
 </article>
+
+                        <!-- PROJECT 4: FULL-FUNNEL SOCIAL STRATEGY -->
+            <article class="project-card video-layout-split"> 
+                <div class="card-text-content"> 
+                    <span class="project-tag">Project Four &bull; Social Campaigns</span> 
+                    <h3>Scaling Full-Funnel Social Engine Frameworks</h3> 
+                    <p class="project-desc">Managing complex seasonal organic and paid distribution mechanics simultaneously across three individual business 
+                        brand profiles.</p> 
+                    
+                    <div class="framework-grid vertical-stack-layout"> 
+                        <div class="fw-node"> 
+                            <strong>The Challenge</strong> 
+                            Aligning precise regional geographic targeting variables with compressed seasonal windows across separate product rosters requires 
+                            automated velocity.
+                        </div> 
+                        <div class="fw-node"> 
+                            <strong>The Insight</strong> 
+                            Top-of-funnel audience awareness must be sustained with consistent core content touchpoints to drive conversion during short active 
+                            buying windows.
+                        </div> 
+                        <div class="fw-node"> 
+                            <strong>The Execution</strong> 
+                            Scaled creative volume up to 12 targeted assets per month in-season, pulling back to a steady 4–5 asset cadence during off-peak cycles. Lifted reach metrics by +31%.
+                        </div> 
+                    </div> 
+                </div> 
+            
+                <!-- Long-Form Content Scroll Showcase for Project 4 --> 
+                <div class="visual-display-wrapper media-right-alignment">
+                    <div class="orange-backdrop social-backdrop-adjustment"></div>
+                    <div class="social-scroll-mask-frame">
+                        <div class="scroll-indicator-overlay">↕ Scroll Campaign Creative</div>
+                        <img src="./Project_04_01.webp" alt="BioAdvanced Multi-Step Educational Campaign Creative Layout" class="portfolio-image long-scroll-image-target">
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 5: MARKET LAUNCH STRATEGY -->
+            <article class="project-card video-layout-split reverse-split-layout"> 
+                <div class="card-text-content"> 
+                    <span class="project-tag">Project Five &bull; Market Launch</span> 
+                    <h3>Baby Bio's North American Strategy Debut</h3> 
+                    <p class="project-desc">Introducing an established European lawn and garden brand identity into an entirely new geographic territory from the ground up.</p> 
+                    
+                    <div class="framework-grid vertical-stack-layout"> 
+                        <div class="fw-node"> 
+                            <strong>The Challenge</strong> 
+                            Entering an aggressive domestic market segment with absolute zero initial localized audience footprints or baseline organic discovery tracking.
+                        </div> 
+                        <div class="fw-node"> 
+                            <strong>The Insight</strong> 
+                            Building audience communities on social requires values-first advice loops before pitching immediate product acquisition rules.
+                        </div> 
+                    </div> 
+                    <div class="script-box"> 
+                        <div class="script-line"><span>[STAGE 1 - TEASE]:</span> Deploy playful, high-impact aesthetic cards across platforms to incentivize organic like and follow interactions.</div> 
+                        <div class="script-line"><span>[STAGE 2 - LAUNCH]:</span> Standardize an approachable voiceover tone focused entirely on clarifying product utility across consumer feeds.</div> 
+                        <div class="script-line"><span>[STAGE 3 - SUSTAIN]:</span> Deliver recurring, value-add gardening tips to convert baseline community followers into retail customers.</div> 
+                    </div> 
+                </div> 
+                
+                <!-- Premium Hover-Glow Creative Card Link for Project 5 -->
+                <div class="visual-display-wrapper media-right-alignment">
+                    <div class="orange-backdrop launch-backdrop-adjustment"></div>
+                    <div class="launch-image-canvas">
+                        <img src="./Project_04_02.webp" alt="Baby Bio Product Showcase UI Social Grid Assets" class="portfolio-image launch-static-image-target">
+                    </div>
+                </div>
+            </article>
 
            <!-- PREMIUM CONVERSION FOOTER -->
     <footer class="portfolio-footer-anchor">
