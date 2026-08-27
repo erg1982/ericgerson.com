@@ -575,6 +575,98 @@
             color: var(--accent);
         }
 
+                /* SMOOTH VIEWPORT ANIMATION TIMINGS */
+        html {
+            scroll-behavior: smooth; /* Animates the transition window smoothly down the page */
+        }
+
+        /* JUMP LINK NAVIGATION BAR INDEX GRID */
+        .project-jump-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border);
+        }
+        
+        .jump-link {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 8px 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: color 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        
+        .jump-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* FIXED POSITION FLOATING BACK TO TOP CAROT BUTTON */
+        .back-to-top-trigger {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 46px;
+            height: 46px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 50%; /* Keeps circle design uniform */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999; /* Forces layer stack dominance over background images and backdrops */
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+        }
+
+        .back-to-top-trigger svg {
+            width: 24px;
+            height: 24px;
+            color: var(--muted);
+            transition: color 0.2s;
+        }
+
+        /* Interactive Trigger Transitions */
+        .back-to-top-trigger:hover {
+            background: #1e2638;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top-trigger:hover svg {
+            color: var(--accent);
+        }
+
+        /* Responsive Safe Boundaries for Mobile Displays */
+        @media (max-width: 600px) {
+            .back-to-top-trigger {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+            .project-jump-menu {
+                gap: 8px;
+            }
+            .jump-link {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+                flex: 1 1 calc(50% - 8px); /* Forces links into clean two-column grid tiles on touchscreens */
+                text-align: center;
+            }
+        }
+
     </style> 
 </head> 
 
@@ -626,8 +718,55 @@
     </section> 
 
     <main> 
-        <h2 class="grid-headline">Selected Creative Case Studies</h2> 
+        <!-- ANCHOR NAVIGATION ROW -->
+        <div id="case-studies-anchor-section">
+            <h2 class="grid-headline">Selected Creative Case Studies</h2>
+            
+            <!-- Jump Links Row Layout -->
+            <div class="project-jump-menu">
+                <a href="#project-one" class="jump-link">Project 1: PDP Strategy</a>
+                <a href="#project-two" class="jump-link">Project 2: Video Operations</a>
+                <a href="#project-three" class="jump-link">Project 3: Digital Hub UX</a>
+                <a href="#project-four" class="jump-link">Project 4: Social Campaigns</a>
+                <a href="#project-five" class="jump-link">Project 5: Market Launch</a>
+            </div>
+        </div>
+
         <div class="portfolio-grid"> 
+            
+            <!-- PROJECT 1 WITH ID ANCHOR --> 
+            <article id="project-one" class="project-card full-width-stack-card"> 
+                <!-- Keep your existing Project 1 inner contents here -->
+            </article>
+
+            <!-- PROJECT 2 WITH ID ANCHOR --> 
+            <article id="project-two" class="project-card"> 
+                <!-- Keep your existing Project 2 inner contents here -->
+            </article>
+
+            <!-- PROJECT 3 WITH ID ANCHOR --> 
+            <article id="project-three" class="project-card"> 
+                <!-- Keep your existing Project 3 inner contents here -->
+            </article>
+
+            <!-- PROJECT 4 WITH ID ANCHOR --> 
+            <article id="project-four" class="project-card video-layout-split"> 
+                <!-- Keep your existing Project 4 inner contents here -->
+            </article>
+
+            <!-- PROJECT 5 WITH ID ANCHOR --> 
+            <article id="project-five" class="project-card video-layout-split reverse-split-layout"> 
+                <!-- Keep your existing Project 5 inner contents here -->
+            </article>
+
+        </div>
+
+        <!-- FLOATING BACK TO TOP BUTTON LAYER -->
+        <a href="#" class="back-to-top-trigger" title="Scroll back to top of portfolio">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
+        </a>
             
             <!-- PROJECT 1 STACKED VARIATION --> 
             <article class="project-card full-width-stack-card"> 
