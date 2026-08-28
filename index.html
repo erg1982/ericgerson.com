@@ -540,15 +540,28 @@
         .contact-link:hover { color: var(--accent); } 
         .copyright { color: var(--muted); font-size: 0.85rem; } 
 
-                /* UNIVERSAL TOP NAVIGATION BAR STYLES */
-        .global-nav {
+        /* ======================================================== */
+        /* RESPONSIVE HEADER & HAMBURGER NAVIGATION ENGINE          */
+        /* ======================================================== */
+        .site-navigation-header {
+            position: relative;
+            width: 100%;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            margin-bottom: 60px;
+            z-index: 1000; /* Forces the menu to stay above all backdrops and visual components */
+        }
+        
+        .nav-container-inner {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 40px;
+            width: 100%;
         }
+
         .nav-logo {
             font-size: 1.3rem;
             font-weight: 800;
@@ -557,13 +570,21 @@
             letter-spacing: -0.03em;
         }
         .nav-logo span { color: var(--accent); }
-        .nav-links {
+
+        /* Hide the programmatic checkbox logic from human view */
+        .menu-toggle-input {
+            display: none;
+        }
+
+        /* 🖥️ DEFAULT DESKTOP NAVIGATION LAYOUT */
+        .nav-links-menu {
             display: flex;
-            gap: 25px;
-            list-style: none; /* REMOVES THE BULLET POINTS */
+            gap: 30px;
+            list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .nav-item-link {
             font-size: 0.95rem;
             font-weight: 600;
@@ -573,6 +594,75 @@
         }
         .nav-item-link:hover, .nav-item-link.active {
             color: var(--accent);
+        }
+
+        /* Hide Hamburger UI Buttons on Desktop Monitor Panels */
+        .hamburger-button-label {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .hamburger-line {
+            width: 100%;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* 📱 MOBILE HAMBURGER COLLAPSE BREAKPOINT ENGINE (Triggered under 768px viewports) */
+        @media (max-width: 767px) {
+            .site-navigation-header {
+                padding: 15px 0;
+            }
+            
+            /* Show Hamburger Triggers on Phones */
+            .hamburger-button-label {
+                display: flex;
+            }
+
+            /* Convert Navigation Links Wrapper into a Slide-Down Dropdown Menu Container */
+            .nav-links-menu {
+                display: none; /* Default setting: hidden until clicked open */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Drops exactly below the header bottom border */
+                left: 0;
+                width: 100%;
+                background: var(--card); /* Matches your project card background values */
+                border-bottom: 1px solid var(--border);
+                padding: 20px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav-item-link {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.1rem; /* Slightly larger text tracking for seamless finger touches */
+            }
+
+            /* THE CSS CHECKBOX HACK CONTROLLER: Opens navigation elements when user touches the trigger button */
+            .menu-toggle-input:checked ~ .nav-links-menu {
+                display: flex;
+            }
+
+            /* CSS ANIMATION SHIFTS: Transforms standard hamburger lines into an interactive "X" close symbol */
+            .menu-toggle-input:checked ~ .hamburger-button-label .hamburger-line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+                background: var(--accent);
+            }
+            .menu-toggle-input:checked ~ .hamburger-button-label .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle-input:checked ~ .hamburger-button-label .hamburger-line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+                background: var(--accent);
+            }
         }
 
                 /* SMOOTH VIEWPORT ANIMATION TIMINGS */
@@ -642,13 +732,27 @@
 
 <body> 
     
-        <!-- UNIVERSAL NAVIGATION BAR -->
-    <nav class="global-nav">
-        <ul class="nav-links">
-            <li><a href="./" class="nav-item-link active">Home</a></li>
-            <li><a href="./resume.html" class="nav-item-link">Resume</a></li>
-        </ul>
-    </nav>
+    <!-- RESPONSIVE GLOBAL HEADER WITH HAMBURGER TOGGLE -->
+    <header class="site-navigation-header">
+        <div class="nav-container-inner">
+            
+            <!-- Hidden Checkbox Controller for Mobile Toggle Trigger -->
+            <input type="checkbox" id="menu-toggle-checkbox" class="menu-toggle-input">
+            
+            <!-- Stylized Hamburger Button (Visible only on Mobile) -->
+            <label for="menu-toggle-checkbox" class="hamburger-button-label" aria-label="Toggle Navigation Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </label>
+            
+            <!-- Navigation Links Wrapper -->
+            <ul class="nav-links-menu">
+                <li><a href="./" class="nav-item-link active">Home</a></li>
+                <li><a href="./resume.html" class="nav-item-link">Resume</a></li>
+            </ul>
+        </div>
+    </header>
     
     <header> 
         <div class="hero"> 
