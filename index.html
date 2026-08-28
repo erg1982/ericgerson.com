@@ -580,36 +580,6 @@
             scroll-behavior: smooth; /* Animates the transition window smoothly down the page */
         }
 
-        /* JUMP LINK NAVIGATION BAR INDEX GRID */
-        .project-jump-menu {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed var(--border);
-        }
-        
-        .jump-link {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--muted);
-            text-decoration: none;
-            padding: 8px 16px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            transition: color 0.2s, border-color 0.2s, transform 0.2s;
-        }
-        
-        .jump-link:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-            transform: translateY(-1px);
-        }
-
         /* FIXED POSITION FLOATING BACK TO TOP CAROT BUTTON */
         .back-to-top-trigger {
             position: fixed;
@@ -719,26 +689,15 @@
 
     <main> 
         
-<!-- ANCHOR NAVIGATION ROW -->
-<div id="case-studies-anchor-section">
-    <h2 class="grid-headline">Selected Creative Case Studies</h2>
-    
-    <!-- Jump Links Row Layout -->
-    <div class="project-jump-menu">
-        <a href="#project-one" class="jump-link">Project 1: PDP Strategy</a>
-        <a href="#project-two" class="jump-link">Project 2: Video Operations</a>
-        <a href="#project-three" class="jump-link">Project 3: Digital Hub UX</a>
-        <a href="#project-four" class="jump-link">Project 4: Social Campaigns</a>
-        <a href="#project-five" class="jump-link">Project 5: Market Launch</a>
-    </div>
-</div>
+<!-- RESTORED: Standard Section Header (Jump Menu Removed) -->
+        <h2 class="grid-headline">Selected Creative Case Studies</h2>
 
 <!-- SINGLE PORTFOLIO GRID CONTAINER -->
 <div class="portfolio-grid">
 
-    <!-- FIXED: The ID anchor is now attached directly to your real Project One content card -->
-<article id="project-one" class="project-card full-width-stack-card"> 
-        <div class="card-text-content full-width-text-layout">
+<!-- PROJECT 1 (ID Anchor Stripped Out) -->
+            <article class="project-card full-width-stack-card">
+                <div class="card-text-content full-width-text-layout">
             <span class="project-tag">Project One &bull; PDP Strategy</span>
             <h3>Evolving Visual Layouts for Product Understanding</h3>
             <p class="project-desc">Transitioning 1000x1000 square PDP graphics away from chaotic information clusters into structured, confidence-building conversion displays.</p>
@@ -762,8 +721,8 @@
         </div>
     </article>
 
-<!-- PROJECT 2 REMODEL: INTERACTIVE SIDE-BY-SIDE VIDEO COLUMN --> 
-            <article id="project-two" class="project-card"> 
+<!-- PROJECT 2 (ID Anchor Stripped Out) -->
+            <article class="project-card video-layout-split">
     <div class="card-text-content"> 
         <span class="project-tag">Project Two &bull; Video Production Strategy</span> 
         <h3>Template-Driven Video Ecosystems at Scale</h3> 
@@ -799,8 +758,8 @@
     </div>
 </article>
 
-<!-- PROJECT 3: DIGITAL WEB TRANSFORMATION MAIN CARD --> 
-            <article id="project-three" class="project-card full-width-stack-card"> 
+<!-- PROJECT 3 (ID Anchor Stripped Out) -->
+            <article class="project-card" full-width-stack-card"> 
     <div class="card-text-content full-width-text-layout">
         <span class="project-tag">Project Three &bull; UX & Web Transformation</span> 
         <h3>Reimagining Dot Com for the Modern Gardener</h3> 
@@ -864,8 +823,8 @@
     </div>
 </article>
 
-                        <!-- PROJECT 4: FULL-FUNNEL SOCIAL STRATEGY -->
-   <article id="project-four" class="project-card video-layout-split"> 
+<!-- PROJECT 4 (ID Anchor Stripped Out) -->
+            <article class="project-card video-layout-split">
                 <div class="card-text-content"> 
                     <span class="project-tag">Project Four &bull; Social Campaigns</span> 
                     <h3>Scaling Full-Funnel Social Engine Frameworks</h3> 
@@ -899,9 +858,8 @@
                 </div>
             </article>
 
-            <!-- PROJECT 5: MARKET LAUNCH STRATEGY -->
- <!-- PROJECT 5 WITH ID ANCHOR --> 
-            <article id="project-five" class="project-card video-layout-split reverse-split-layout"> 
+<!-- PROJECT 5 (ID Anchor Stripped Out) -->
+            <article class="project-card video-layout-split reverse-split-layout">
                 <div class="card-text-content"> 
                     <span class="project-tag">Project Five &bull; Market Launch</span> 
                     <h3>Baby Bio's North American Strategy Debut</h3> 
@@ -933,7 +891,7 @@
                     <div class="launch-image-canvas">
                         <img src="./Project_04_02.webp" alt="Baby Bio Product Showcase UI Social Grid Assets" class="portfolio-image launch-static-image-target">
                     </div>
-                </div>
+                </div> <!-- PORTFOLIO GRID CLOSURE -->
             </article>
 
            <!-- PREMIUM CONVERSION FOOTER -->
