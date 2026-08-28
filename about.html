@@ -146,7 +146,9 @@
             transform: rotate(-3.5deg) scale(1.01);
         }
 
-        /* ABOUT TEXT LAYOUT CONTROLLERS */
+          /* ======================================================== */
+        /* ABOUT TEXT LAYOUT CONTROLLERS FIXED                      */
+        /* ======================================================== */
         .about-text-content h2 {
             font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 800;
@@ -164,32 +166,30 @@
             line-height: 1.7;
         }
 
-        /* Dual Column Split Matrix: Professional vs Personal */
+        /* FIXED: Removed the 2-column flex split grid entirely */
         .interests-split-blocks {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
+            display: flex;
+            flex-direction: column; /* Stacks text rows smoothly top-to-bottom */
+            gap: 35px; /* Creates clean spacing between narrative elements */
             border-top: 1px solid var(--border);
             padding-top: 35px;
-        }
-        @media (min-width: 600px) {
-            .interests-split-blocks {
-                grid-template-columns: 1fr 1fr;
-            }
+            width: 100%;
         }
         
         .narrative-card h3 {
-            font-size: 0.9rem;
+            font-size: 0.95rem; /* Upgraded text size to sync visual structure */
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--accent);
-            margin-bottom: 35px;
+            margin-bottom: 12px;
             border-left: 3px solid var(--accent);
+            padding-left: 10px;
         }
         .narrative-card p {
             color: var(--muted);
-            font-size: 0.98rem;
-            line-height: 1.6;
+            font-size: 1.1rem; /* Upgraded copy sizing to eliminate compression artifacts */
+            line-height: 1.7; /* Expanded line height matching leading parameters */
+            max-width: 100%;
         }
 
         footer { margin-top: 120px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center; } 
