@@ -727,7 +727,7 @@
             }
         }
 
-        /* PREMIUM DOWNLOAD RESUME BUTTON */
+                /* MINIMALIST RESUME DOWNLOAD BUTTON (ORANGE STRIPPED) */
         .action-button-row {
             margin-top: 15px;
             display: flex;
@@ -742,24 +742,26 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--accent);
-            color: #ffffff;
+            background: var(--card); /* Replaced bright orange with your dark slate card base color */
+            color: var(--text); /* Uses clean white typography */
             text-decoration: none;
-            font-weight: 300;
+            font-weight: 700;
             font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             padding: 12px 24px;
             border-radius: 6px;
-            border: 1px solid transparent;
-            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.15);
-            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid var(--border); /* Neutral dark gray edge line instead of a color stroke */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
 
+        /* Minimalist Hover Feedback: Switches slate hues and scales depth softly */
         .download-resume-btn:hover {
-            background: #e05e00;
+            background: #222938; /* Subtle gray-blue layout shift */
+            border-color: var(--muted); /* Slightly brightens the outline frame without introducing color */
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
 
         .download-resume-btn:active {
@@ -771,11 +773,10 @@
                 width: 100%;
             }
             .download-resume-btn {
-                width: 100%; /* Spans full width on mobile screens for easy thumb tapping */
+                width: 100%; /* Full screen span on mobile interfaces */
                 justify-content: center;
             }
         }
-
         
     </style> 
 </head> 
@@ -814,9 +815,10 @@
                     <span class="btn-icon">📥</span> Download Resume (PDF)
                 </a>
             </div>
-        </div>
+                    </div>
             </div> 
-            <div class="bio-block"> 
+            
+        <div class="bio-block"> 
                 <h3>Operational Impact</h3> 
                 <p>Proven track record leading internal creative studios, orchestrating direct report designers, and balancing external agency partners to drive organic discovery and brand equity.</p> 
             </div> 
