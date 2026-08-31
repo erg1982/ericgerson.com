@@ -727,6 +727,56 @@
             }
         }
 
+        /* PREMIUM DOWNLOAD RESUME BUTTON */
+        .action-button-row {
+            margin-top: 15px;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        /* Overrides desktop text-centering if your header is centered */
+        header { text-align: left; }
+        .hero { align-items: flex-start; }
+
+        .download-resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.15);
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .download-resume-btn:hover {
+            background: #e05e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        .download-resume-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 767px) {
+            .action-button-row {
+                width: 100%;
+            }
+            .download-resume-btn {
+                width: 100%; /* Spans full width on mobile screens for easy thumb tapping */
+                justify-content: center;
+            }
+        }
+
+        
     </style> 
 </head> 
 
@@ -763,6 +813,14 @@
             <div class="bio-block"> 
                 <h3>Professional Focus</h3> 
                 <p>15+ years managing digital content ecosystems, product experience management (PXM), and complex creative production pipelines. Expert at navigating regulatory requirements while scaling multimedia assets dynamically.</p> 
+               
+                <!-- PREMIUM DOWNLOAD BUTTON CONTAINER -->
+            <div class="action-button-row">
+                <a href="./eric_gerson_resume.pdf" download="Eric_Gerson_Resume.pdf" class="download-resume-btn">
+                    <span class="btn-icon">📥</span> Download Resume (PDF)
+                </a>
+            </div>
+        </div>
             </div> 
             <div class="bio-block"> 
                 <h3>Operational Impact</h3> 
