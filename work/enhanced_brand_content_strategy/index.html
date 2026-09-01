@@ -33,7 +33,7 @@
                 .hero { display: flex; flex-direction: column; gap: 20px; align-items: center; } 
                 .name { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; } 
                 .name span { color: var(--accent); } 
-                .title-sub { font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--muted); font-weight: 600; max-width: 100%; margin: 0 auto; } 
+                .title-sub { font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--muted); font-weight: 600; max-width: 850px; margin: 0 auto; } 
                 
                 /* Bio Segment */ 
                 .bio-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; text-align: left; } 
@@ -59,10 +59,14 @@
         .project-card h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.02em; } 
         .project-desc { color: var(--muted); margin-bottom: 20px; font-size: 1.05rem; } 
         
-        /* OPTION 2 CSS RULES FIXED IN ENGINE BELOW */
-        .full-width-stack-card { grid-template-columns: 1fr !important; gap: 35px !important; }
-        .horizontal-row-layout { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important; gap: 20px; }
-
+       /* FIXED: Forces the challenge framework nodes into a clean 1-column stack */
+        .horizontal-row-layout {
+            display: flex !important;
+            flex-direction: column !important; /* Forces a single column vertical stack */
+            gap: 20px !important;
+            width: 100% !important;
+        }
+        
         /* Framework Presentation blocks */ 
         .framework-box { background: #0f131a; border-radius: 8px; padding: 25px; display: flex; flex-direction: column; gap: 15px; border-left: 3px solid var(--accent); } 
         .fw-node strong { display: block; color: var(--text); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; } 
