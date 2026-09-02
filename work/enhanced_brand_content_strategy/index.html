@@ -217,7 +217,7 @@
 
         /* Narrative Structural Layout Blocks */
         .narrative-headline-h2 { font-size: 1.8rem; font-weight: 700; margin: 50px 0 20px 0; border-left: 4px solid var(--accent); padding-left: 15px; letter-spacing: -0.02em; }
-        .narrative-p { font-size: 1.1rem; color: var(--muted); margin-bottom: 25px; line-height: 1.7; }
+        .narrative-p {max-width: 100%; font-size: 1.1rem; color: var(--muted); margin-bottom: 25px; line-height: 1.7; }
         
         /* Highlight Callout Quote Block */
         .strategy-insight-callout { background: #0f131a; border-radius: 12px; border: 1px solid var(--border); padding: 35px; margin: 40px 0; position: relative; }
@@ -365,7 +365,7 @@
         /* ======================================================== */
         /* INTERACTIVE BEFORE/AFTER MATRIX CANVAS ENGINE            */
         /* ======================================================== */
-        .lifecycle-visual-container { position: relative; width: 100%; margin: 40px 0; padding-bottom: 15px; }
+        .lifecycle-visual-container { position: relative; width: 1100px; margin: 40px 0; padding-bottom: 15px; }
         .slider-window-mask { position: relative; width: 100%; height: auto; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
         .lifecycle-img-strip { width: 100%; height: auto; display: block; }
         
@@ -425,10 +425,8 @@
 <div class="portfolio-grid">
 <!-- ENHANCED CASE STUDY CONTENT COPY -->
             <article class="project-card full-width-stack-card">
-              <div class="card-text-content full-width-text-layout 
-                  {
-                  grid-template-columns: 1fr !important;>
-                  }
+              <div class="card-text-content full-width-text-layout>
+                  
                     <span class="project-tag">E-Commerce EBC Optimization</span> 
                    
                     <p class="project-desc">The Backstory & Canvas Challenge</p>
