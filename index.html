@@ -325,8 +325,13 @@
 
 @media (min-width: 768px) {
     .web-portfolio-row-container {
-        flex-direction: row; /* Snaps frames horizontally side-by-side on desktop viewports */
-        justify-content: space-between;
+        flex-wrap: wrap; /* Allows items to wrap onto a new line instead of squeezing */
+    }
+    
+    .sub-grid-metrics-row {
+        width: 100% !important; /* Spans across the entire horizontal window width */
+        margin-top: 40px !important; /* Injects a clean gap beneath your 3 images */
+        grid-column: 1 / -1; /* If using grid layout, this forces it to span from edge to edge */
     }
 }
 
