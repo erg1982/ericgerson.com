@@ -326,11 +326,14 @@
 @media (min-width: 768px) {
     .web-portfolio-row-container {
         flex-wrap: wrap; /* Allows items to wrap onto a new line instead of squeezing */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
     }
     
     .sub-grid-metrics-row {
         width: 100% !important; /* Spans across the entire horizontal window width */
-        margin-top: 40px !important; /* Injects a clean gap beneath your 3 images */
+        margin-top: 0 auto !important; /* Injects a clean gap beneath your 3 images */
         grid-column: 1 / -1; /* If using grid layout, this forces it to span from edge to edge */
     }
 }
@@ -338,7 +341,7 @@
 .web-frame-card {
     position: relative;
     flex: 1; /* Grants equal horizontal space allocation to all three images */
-    width: 100%;
+    max-width: calc(33.333% - 20px);
     padding: 0px 14px 14px 0px; /* Reserves canvas perimeter margins for the offset shadow shadow drift */
     display: flex;
     flex-direction: column;
