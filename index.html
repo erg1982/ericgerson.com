@@ -131,6 +131,83 @@
     letter-spacing: 0.02em;
 }
 
+/* PROJECT 1: SIDE-BY-SIDE RESPONSIVE LAYOUT ENGINE */
+/* CONTAINER SEPARATION FOR PERFECT RE-ALIGNMENT */
+.project-1-gallery-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+
+.web-portfolio-row-container {
+    display: flex;
+    flex-direction: column; /* Default: Stacks image cards cleanly on mobile touch screens */
+    gap: 40px; /* Restores the original spacing look on mobile viewports */
+    width: 100%;
+}
+
+/* 📱 MOBILE SPECIFIC STRUCTURAL OVERRIDES (FORCING FULL EDGE-TO-EDGE VIEW) */
+@media (max-width: 767px) {
+    .web-frame-card {
+        width: 100% !important; /* Forces each card to use the full horizontal screen width */
+        max-width: 100% !important; /* Eliminates the 33% compression wall completely */
+        padding: 0 14px 14px 0 !important; /* Maintains spatial gutter safety for orange drop-shadows */
+    }
+    
+    .sub-grid-metrics-row {
+        margin-top: 10px !important; /* Prevents overlap with your stacked card arrays */
+    }
+}
+
+/* 🖥️ DESKTOP DISPLAY LAYOUT ENGINE (TRIGGERS FOR 768px OR WIDER MONITOR SCREENS) */
+@media (min-width: 768px) {
+    .web-portfolio-row-container {
+        flex-direction: row; /* Snaps exactly side-by-side horizontally on desktop panels */
+        justify-content: space-between;
+        align-items: stretch; /* Forces all 3 image cards to lock onto the identical pixel height */
+    }
+    
+    .web-frame-card {
+        flex: 1; /* Assigns a strict 33.3% equal width allocation to prevent image bloat */
+        max-width: calc(33.333% - 20px); /* Keeps image sizes highly uniform and predictable on desktop */
+    }
+
+    .sub-grid-metrics-row {
+        width: 100% !important;
+        margin: 0 auto !important; /* Centers metrics banner layout across widescreen monitors */
+    }
+}
+
+        /* PROJECT 1: INTERACTIVE HOVER GLOW & INTERACTION ENGINE */
+.web-hover-trigger-anchor {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Base Transition Smoothing for Elements inside the card link loop */
+.web-image-canvas {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deck-orange-shadow {
+    transition: transform 0.3s ease;
+}
+
+/* Hover Interaction: Shifts canvas up slightly and radiates an orange glow filter */
+.web-hover-trigger-anchor:hover .web-image-canvas {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(255, 107, 0, 0.25); /* Signature orange brand glow effect */
+}
+
+/* Hover Interaction: Drifts presentation card background downward slightly to emphasize depth */
+.web-hover-trigger-anchor:hover .deck-orange-shadow {
+    transform: rotate(3deg) scale(1.03);
+}
 
         /* PROJECT 2: SPLIT LAYOUT & CLICKABLE MEDIA ENGINE */
 @media (min-width: 850px) {
@@ -312,113 +389,6 @@
 }
 .segment-bottom .cropped-img-target { 
     bottom: 0; /* Align perfectly to bottom boundary edge */
-}
-
-/* PROJECT 1: SIDE-BY-SIDE RESPONSIVE LAYOUT ENGINE */
-.web-portfolio-row-container {
-    display: flex;
-    flex-direction: column; /* Stacks image frames vertically on mobile viewports */
-    gap: 30px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-@media (min-width: 768px) {
-    .web-portfolio-row-container {
-        flex-wrap: wrap; /* Allows items to wrap onto a new line instead of squeezing */
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: stretch;
-    }
-    
-    .sub-grid-metrics-row {
-        width: 100% !important; /* Spans across the entire horizontal window width */
-        margin-top: 0 auto !important; /* Injects a clean gap beneath your 3 images */
-        grid-column: 1 / -1; /* If using grid layout, this forces it to span from edge to edge */
-    }
-}
-
-.web-frame-card {
-    position: relative;
-    flex: 1; /* Grants equal horizontal space allocation to all three images */
-    max-width: calc(33.333% - 20px);
-    padding: 0px 14px 14px 0px; /* Reserves canvas perimeter margins for the offset shadow shadow drift */
-    display: flex;
-    flex-direction: column;
-}
-
-.web-image-canvas {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    overflow: hidden;
-    z-index: 2; /* Forces image layer to float cleanly over backdrop offset card components */
-    background: #0f131a;
-}
-
-.web-screenshot-target {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-/* Identical Presentation Offset Backdrop System matching Presentation Document Parameters */
-.deck-orange-shadow {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    width: calc(100% - 14px);
-    height: calc(100% - 14px);
-    background: #c25303; /* Matches programmatic orange deck backdrop layout */
-    border-radius: 8px;
-    z-index: 1;
-    transform: rotate(1.5deg); /* Applies subtle agency presentation tilt */
-}
-
-.web-frame-label {
-    position: relative;
-    z-index: 3;
-    margin-top: 12px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #ffffff;
-    text-align: center;
-}
-
-        /* PROJECT 1: INTERACTIVE HOVER GLOW & INTERACTION ENGINE */
-.web-hover-trigger-anchor {
-    display: block;
-    position: relative;
-    width: 100%;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Base Transition Smoothing for Elements inside the card link loop */
-.web-image-canvas {
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.deck-orange-shadow {
-    transition: transform 0.3s ease;
-}
-
-/* Hover Interaction: Shifts canvas up slightly and radiates an orange glow filter */
-.web-hover-trigger-anchor:hover .web-image-canvas {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 15px 30px rgba(255, 107, 0, 0.25); /* Signature orange brand glow effect */
-}
-
-/* Hover Interaction: Drifts presentation card background downward slightly to emphasize depth */
-.web-hover-trigger-anchor:hover .deck-orange-shadow {
-    transform: rotate(3deg) scale(1.03);
 }
 
 /* PROJECTS 4 & 5: CROSS-DEVICE STRUCTURAL RE-ALIGNMENT ENGINE */
