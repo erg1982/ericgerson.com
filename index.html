@@ -133,7 +133,7 @@
 
                             /* PROJECT 1: SIDE-BY-SIDE RESPONSIVE LAYOUT ENGINE */
                             /* CONTAINER SEPARATION FOR PERFECT RE-ALIGNMENT */
-.project-1-gallery-block {
+.project-3-gallery-block {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -145,6 +145,7 @@
     flex-direction: column; /* Default: Stacks image cards cleanly on mobile touch screens */
     gap: 30px;
     width: 100%;
+    margin-top: 20%;
 }
 
 /* 📱 MOBILE SPECIFIC STRUCTURAL OVERRIDES (FORCING FULL EDGE-TO-EDGE VIEW) */
@@ -165,12 +166,15 @@
     .web-portfolio-row-container {
         flex-direction: row; /* Snaps exactly side-by-side horizontally on desktop panels */
         justify-content: space-between;
-        align-items: stretch; /* Forces all 3 image cards to lock onto the identical pixel height */
     }
     
     .web-frame-card {
+        position: relative;
         flex: 1; /* Assigns a strict 33.3% equal width allocation to prevent image bloat */
         max-width: calc(33.333% - 20px); /* Keeps image sizes highly uniform and predictable on desktop */
+        padding: 0px 14px 14px 0px; 
+        display: flex;
+        flex-direction: column;
     }
 
     .sub-grid-metrics-row {
@@ -306,7 +310,7 @@
     margin-left: 4px; /* Optically centers the triangular play arrow inside the circle */
 }
         
-/* OPTION 3 REVISED: ADAPTIVE DESKTOP-CROP / MOBILE-FULL LAYOUT ENGINE */ 
+                /* PROJECT 3 REVISED: ADAPTIVE DESKTOP-CROP / MOBILE-FULL LAYOUT ENGINE */ 
 .visual-display-wrapper { 
     position: relative; 
     width: 100%; 
