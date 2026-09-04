@@ -172,6 +172,9 @@
         position: relative;
         flex: 1; /* Assigns a strict 33.3% equal width allocation to prevent image bloat */
         width: 100%;
+            padding: 0px 14px 14px 0px; /* Reserves canvas perimeter margins for the offset shadow shadow drift */
+    display: flex;
+    flex-direction: column;
     }
 
     .sub-grid-metrics-row {
