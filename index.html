@@ -754,7 +754,32 @@
                 justify-content: center;
             }
         }
+
+                /* SIMPLE SYSTEM VERTICAL SPACING CODES */
+        .simple-system-wrapper {
+            margin: 60px 0; /* Creates wide space above and below the whole section */
+            width: 100%;
+        }
         
+        .simple-system-list {
+            list-style: none; /* Removes any black bullet points */
+            padding: 0;
+            margin: 0;
+        }
+        
+        .simple-system-list li {
+            margin-bottom: 24px; /* FIXED: Creates a clean 24px gap below each section line */
+            font-size: 1.1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        .simple-system-list li strong {
+            color: var(--text); /* Makes the topic title pop in your clean off-white */
+            display: inline-block;
+            margin-right: 4px;
+        }
+
     </style> 
 </head> 
 
@@ -810,21 +835,27 @@
             </p>
             </div>
        </div>        
-          <div class="bio-section"> 
-            <div class="bio-block"> 
-                <h3>My System</h3> 
-                <strong>STRATEGY &#8594; IDEA &#8594; SYSTEM &#8594; SCALE</strong>
-                <p></p>
+        
+<!-- MY SYSTEM BLOCK FORMAT -->
+<div class="simple-system-wrapper">
+    <h2 class="grid-headline">My System: Strategy &rarr; Idea &rarr; System &rarr; Scale</h2>
+    
+    <ul class="simple-system-list">
+        <li>
+            <strong>Strategy:</strong> Audience insights, positioning, customer journeys, content strategy.
+        </li>
+        <li>
+            <strong>Idea:</strong> Creative concepts, messaging systems, visual storytelling, campaign direction.
+        </li>
+        <li>
+            <strong>System:</strong> Design systems, templates, modular content, production frameworks.
+        </li>
+        <li>
+            <strong>Scale:</strong> Hundreds of SKUs, channels, markets, assets, and ongoing optimization.
+        </li>
+    </ul>
+</div>
 
-            <p><strong>Strategy</strong></p>
-            <p>Audience insights, positioning, customer journeys, content strategy</p>
-            <p><strong>Idea</strong></p>
-            <p>Creative concepts, messaging systems, visual storytelling, campaign direction</p>
-            <p><strong>System</strong></p>
-            <p>Design systems, templates, modular content, production frameworks</p>
-            <p><strong>Scale</strong><p>
-            <p>Hundreds of SKUs, channels, markets, assets, and ongoing optimization</p> 
-        </div>
           </div>
     </header> 
 
